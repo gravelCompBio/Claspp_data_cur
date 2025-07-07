@@ -22,6 +22,9 @@ def main():
     
     print("step 1) downloading the following PTM types")
     ws.download_db_PTM()
+    
+    time.sleep(15)
+    
 
     print("step 2) reading and intial cleaning")
     uni2name , masterlist = dp.unzip_and_read_files_from_dbPTM(db_loc=dbdir)
