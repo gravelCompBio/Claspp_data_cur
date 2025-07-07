@@ -22,7 +22,7 @@ Data curation for the Claspp Model
 
   
 
-This repository contains the code to replicate the the CLASPP the Data Curation. This is going above and beyond what other Deep learning based projects has done. The orignal code I did NOT maintain good code practices including I did NOT recover any random seeds so the data will be differnt from what I used but the process should be the same. I also rely on [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) and it was writen in matlab. Finally for the sk-learn version of Spectral Culstering you need a minimun of 250 GB of ram to run the K-Ubiq data set (n of 80,000)
+This repository contains the code to replicate the the CLASPP the Data Curation. This is going above and beyond what other Deep learning based projects has done. The orignal code I did NOT maintain good code practices including I did NOT recover any random seeds so the data will be differnt from what I used but the process should be the same. I also rely on [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) and it was writen in matlab. Finally for the sk-learn version of Spectral Culstering you need a minimun of 250 GB of ram to run the K-Ubiq data set (n of 80,000). This data curation should take 12 hours to run in total. 
 
 
 
@@ -65,10 +65,24 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
   
 
    
-- `scrape_and_clean_data_1.py`: intial python file that downloads the PTM data from [dbPTM](https://biomics.lab.nycu.edu.tw/dbPTM/) and [uniprot](https://www.uniprot.org/)
+- `scrape_and_clean_data_1.py`: intial python file that downloads the PTM data from [dbPTM](https://biomics.lab.nycu.edu.tw/dbPTM/) and [uniprot](https://www.uniprot.org/). Then cleans the data 
+  
+- `rep_base_gready_cluster_2.py`: preforms sequence idenity thresh-holding on ptm-sites
+
+- `post_rbgc_prep_for_spec_clustering_3.py`: orginizes data and keep tracks of sampling, multi-label events, and negtives data points
+
+- `spec_clus_sklearn_4.py`: Cluster all  PTM types using spectral clustering (sk-Learn)
+
+- `get_easy_neg_data_5.py`: preforms sequence idenity thresh-holding on ptm-sites and potential easy negtive sites
+
+- `sample_spec_cluster_6.py`: sample from spectral clusters and strifies samples across all Spectral Clusters
+
+
+
+  
   
 
-- `phos-ST_Example_Code.ipynb`: ipynb file with example code to run Phosformer-ST 
+- `data/`: directory to hold the data  
 
   
 
@@ -83,15 +97,6 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
     - `tokenization_esm.py`: Python file that contains code for the tokenizer  
 
   
-
-  
-
-- `multitask_MHA_esm2_t30_150M_UR50D_neg_ratio_8+8_shift_30_mask_0.2_2023-03-25_90.txt`: this txt file contains a link to the training weights held on the hugging face or zenodo repository 
-
-    - See section below (Downloading this repository) to be shown how to download this folder and where to put it
-  
-
-- `phosST.yml`: This file is used to help create an environment for Phosformer-ST to work 
 
    
 
