@@ -25,8 +25,6 @@ Data curation for the Claspp Model
 This repository contains the code to replicate the the CLASPP the Data Curation. This is going above and beyond what other Deep learning based projects has done. The orignal code I did NOT maintain good code practices including I did NOT recover any random seeds so the data will be differnt from what I used but the process should be the same. I also rely on [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) and it was writen in matlab. Finally for the sk-learn version of Spectral Culstering you need a minimun of 250 GB of ram to run the K-Ubiq data set (n of 80,000)
 
 
-D. Huang, C. -D. Wang, J. -S. Wu, J. -H. Lai and C. -K. Kwoh, "Ultra-Scalable Spectral Clustering and Ensemble Clustering," in IEEE Transactions on Knowledge and Data Engineering, vol. 32, no. 6, pp. 1212-1226, 1 June 2020, doi: 10.1109/TKDE.2019.2903410. keywords: {Clustering algorithms;Sparse matrices;Complexity theory;Robustness;Bipartite graph;Scalability;Approximation algorithms;Data clustering;large-scale clustering;spectral clustering;ensemble clustering;large-scale datasets;nonlinearly separable datasets},
-
 
 </br> 
 
@@ -67,7 +65,7 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
   
 
    
-
+- `scrape_and_clean_data_1.py`: intial python file that downloads the PTM data from [dbPTM](https://biomics.lab.nycu.edu.tw/dbPTM/) and [uniprot](https://www.uniprot.org/)
   
 
 - `phos-ST_Example_Code.ipynb`: ipynb file with example code to run Phosformer-ST 
