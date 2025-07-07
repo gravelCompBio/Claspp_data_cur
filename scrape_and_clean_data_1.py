@@ -1,4 +1,5 @@
 import os
+import time
 import getData.WebSrcape as ws
 import getData.DataProcess as dp
 import getData.FileReader as fr
