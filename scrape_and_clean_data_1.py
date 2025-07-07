@@ -15,6 +15,11 @@ text_loc = "data/text_loc/"
 
 
 def main():
+    if not os.path.isdir(f"{dbdir}"):
+        os.makedirs(f"{dbdir}")
+    if not os.path.isdir(f"{fasta_loc}"):
+        os.makedirs(f"{fasta_loc}")
+    
     print("step 1) downloading the following PTM types")
     ws.download_db_PTM()
 
