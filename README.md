@@ -33,7 +33,7 @@ D. Huang, C. -D. Wang, J. -S. Wu, J. -H. Lai and C. -K. Kwoh, "Ultra-Scalable Sp
 
 
 
-A webtool for Phosformer-ST can be accessed from: https://esbg.bmb.uga.edu/phosformer/
+For the Claspp model go to this Github. For the webtool for the CLASPP can be accessed from: 
 
 </br> 
    
