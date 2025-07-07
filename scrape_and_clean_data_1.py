@@ -29,6 +29,9 @@ def main():
 
     print("step 2) reading and intial cleaning")
     uni2name , masterlist = dp.unzip_and_read_files_from_dbPTM(db_loc=dbdir)
+    if len(masterlist)==0:
+        "weird run again"
+        return 
     missingpeps, missingunis, uni2seq, masterlist = ws.find_missing_data(masterlist=masterlist)
     masterlist, uniset = dp.intial_hand_curation_update(masterlist=masterlist, csv_loc=csv_loc)
 
