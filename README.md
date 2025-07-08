@@ -182,7 +182,7 @@ cd Claspp_data_cur
     
 
 ### Creating this conda environment 
-(yml file is include but torch times makes it not useable depending on your nvidia driver)
+(yml file is include but torch sometimes makes it not useable depending on your nvidia driver)
 
 Just type these lines of code into the terminal after you download this repository (this assumes you have [anaconda](https://www.anaconda.com/) already installed) 
 
