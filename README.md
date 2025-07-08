@@ -160,14 +160,14 @@ cd Claspp_data_cur
 
   
 
-### Main option) 
+### Other related repos
 
 
 
 | Repo  | Link | Discription|
 | ------------- | ------------- |------------------------------------------|
-| GitHub  | [github version](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This verstion contains code but needs the to run the code to generate all the helper-files (will take some time run this code)|
-| Zenodo  | (zenodo version)(https://github.com/gravelCompBio/Claspp_data_cur/tree/main) | This version contains code and helper files already genrated. mostly for proof of concept and seeing the all the data intermeidate states |
+| GitHub  | [github version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This verstion contains code but needs the to run the code to generate all the helper-files (will take some time run this code)|
+| Zenodo  | [zenodo version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main) | This version contains code and helper files already genrated. mostly for proof of concept and seeing the all the data intermeidate states |
 
   
 Github (base code without helperfiles that are generated when you run the code)
