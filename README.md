@@ -105,7 +105,7 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
 
   
 
-Make sure you go to this website https://pytorch.org/get-started/locally/ 
+Make sure you go to this website [pytorch](https://pytorch.org/get-started/locally/) 
 
   
 
