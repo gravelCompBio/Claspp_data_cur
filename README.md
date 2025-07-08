@@ -22,7 +22,7 @@ Data curation for the Claspp Model
 
   
 
-This repository contains the code to replicate the the CLASPP the Data Curation. This is going above and beyond what other Deep learning based projects has done. The orignal code I did NOT maintain good code practices including I did NOT recover any random seeds so the data will be differnt from what I used but the process should be the same. I also rely on [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) and it was writen in matlab. Finally for the sk-learn version of Spectral Culstering you need a minimun of 250 GB of ram to run the K-Ubiq data set (n of 80,000). The Sequence idenity clustering is GPU accelorated (using [torch](https://pytorch.org/)) so a minumum of 8 GB of vRAM is needed. This data curation should take 12 hours to run in total. 
+This repository contains the code to replicate the the CLASPP the Data Curation. This is going above and beyond what other Deep learning based projects has done. With the orignal code I did NOT maintain/recover any random seeds so the data will be differnt from what I used but the process should be the same. I also rely on [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) and it was writen in matlab. Finally for the sk-learn version of Spectral Culstering you need a minimun of 250 GB of ram to run the K-Ubiq data set (n of 80,000). The Sequence idenity clustering is GPU accelorated (using [torch](https://pytorch.org/)) so a minumum of 8 GB of vRAM is needed. This data curation should take 12 hours to run in total. 
 
 
 
@@ -78,19 +78,23 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
 - `sample_spec_cluster_6.py`: sample from spectral clusters and strifies samples across all Spectral Clusters
 
 
+- `data/`: directory to hold the data/temp files   
 
-  
-  
+    - `csv_loc/`: where all csv and tsv files are located 
 
-- `data/`: directory to hold the data  
-
-  
-
-    - `modeling_esm.py`: Python file that has the architecture of Phosformer-ST 
+      - `uni2acc.tsv`: hand currated exeptions to data found in dbPTM that where difficult to automate (only a handfull)
     
+    - `text_loc/`: where all txt files are located
+ 
+      - `infosforaffinitymat/` : where the order of the indexes for the affinity matrix npz files are held.
+
+        - `ST-Phosphorylation.txt` : info for the  .mat file that is already populated
+     
+      - `ussc_output` : where the [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) clustering file goes (example format should replace on your own)
+     
+        - `testdataNC-5.txt` : ouput of the  [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) (example of what the format should be plead replace)
+  
       
-    
-    - `configuration_esm.py`: Python file that has configuration/parameters of Phosformer-ST  
     
       
     
