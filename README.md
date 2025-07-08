@@ -100,11 +100,19 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
      
         - `testdataNC-5.txt` : ouput of the  [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) (example of what the format should be plead replace)
 
-      
+- `getData/`: Where all funtions exist
+  
+  - `DataProcess.py/`: where 90% of the code resides in the form of helper fuctions
+ 
+  - `FileReader.py/` : where all the file reader funtions exist
+ 
+  - `WebScraper.py` : where the code for interacting with APIs and pulling data
+ 
+     
+  
     
       
     
-    - `tokenization_esm.py`: Python file that contains code for the tokenizer  
 
   
 
@@ -114,8 +122,7 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
 
   
 
-- `LICENSE`: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License 
-
+- `LICENSE`: MIT licence (open source but don't try to make money off of it)
   
 
   
