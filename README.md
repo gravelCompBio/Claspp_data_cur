@@ -28,7 +28,7 @@ For this repo we are generating a data set in the hopes to plug in for both Cont
 </p>
 
 
-This repository contains the code to replicate the the CLASPP the Data Curation. This is going above and beyond what other Deep learning based projects has done. With the orignal code I did NOT maintain/recover any random seeds so the data will be differnt from what I used but the process should be the same. I also rely on [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) and it was writen in matlab. Finally for the sk-learn version of Spectral Culstering you need a minimun of 250 GB of ram to run the K-Ubiq data set (n of 80,000). The Sequence idenity clustering is GPU accelorated (using [torch](https://pytorch.org/)) so a minumum of 8 GB of vRAM is needed. This data curation should take 12 hours to run in total. 
+This repository contains the code to replicate the CLASPP model's Data Curation. This is going above and beyond what other Deep learning based projects has done and I hope this raises the standard for what is expected in the field. With the orignal code I did NOT maintain/recover any random seeds so the data will be differnt from what I used but the process should be the same. I also rely on [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) and it was writen in matlab. Finally for the sk-learn version of Spectral Culstering you need a minimun of 250 GB of ram to run the K-Ubiq data set (n of 80,000). The Sequence idenity clustering is GPU accelorated (using [torch](https://pytorch.org/)) so a minumum of 8 GB of vRAM is needed. This data curation should take 12 hours to run in total. 
 
 
 
