@@ -177,33 +177,25 @@ Python == 3.9.16
 
   
 
-![numpy=1.24.3](https://img.shields.io/badge/numpy-1.24.3-blue)  
-
   
 
-![pandas=2.0.2](https://img.shields.io/badge/pandas-2.0.2-blue)  
+![numpy=2.0.2](https://img.shields.io/badge/numpy-2.0.2-blue)  
 
-  
 
-![matplotlib=3.7.1](https://img.shields.io/badge/matplotlib-3.7.1-blue)  
+![scikit-learn=1.6.1](https://img.shields.io/badge/scikitlearn-1.6.1-blue)    
 
-  
 
-![scikit-learn=1.2.2](https://img.shields.io/badge/scikitlearn-1.2.2-blue)  
+![requests=2.32.4](https://img.shields.io/badge/requests-2.32.4-blue)  
 
-  
 
-![tqdm=4.65.0](https://img.shields.io/badge/tqdm-4.64.1-blue) 
+![wget=3.2](https://img.shields.io/badge/wget-3.2-blue)  
 
-  
 
-![fair-esm=2.0.0](https://img.shields.io/pypi/v/fair-esm?label=fair-esm)   
+![unipressed=1.4.0](https://img.shields.io/badge/unipressed-1.4.0-blue)  
 
-  
 
-![transformers=4.31.0](https://img.shields.io/badge/transformers-4.31.0-blue)  
+![scipy=1.13.1](https://img.shields.io/badge/scipy-1.13.1-blue) 
 
-  
 
 ![torch=2.0.1](https://img.shields.io/badge/torch-2.0.1-blue)      
 
