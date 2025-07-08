@@ -101,24 +101,15 @@ Python == 3.9.16
   
 
 ![numpy=2.0.2](https://img.shields.io/badge/numpy-2.0.2-blue)  
-
-
 ![scikit-learn=1.6.1](https://img.shields.io/badge/scikitlearn-1.6.1-blue)    
-
-
+![scipy=1.13.1](https://img.shields.io/badge/scipy-1.13.1-blue) 
 ![requests=2.32.4](https://img.shields.io/badge/requests-2.32.4-blue)  
 
 
 ![wget=3.2](https://img.shields.io/badge/wget-3.2-blue)  
-
-
 ![unipressed=1.4.0](https://img.shields.io/badge/unipressed-1.4.0-blue)  
-
-
-![scipy=1.13.1](https://img.shields.io/badge/scipy-1.13.1-blue) 
-
-
-![torch=2.0.1](https://img.shields.io/badge/torch-2.0.1-blue)      
+![pandas==2.3.1](https://img.shields.io/badge/pandas-2.3.1-blue) 
+![torch=2.7.1](https://img.shields.io/badge/torch-2.7.1-blue)      
 
   
 
