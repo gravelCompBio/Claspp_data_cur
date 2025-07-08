@@ -26,7 +26,7 @@ This repository contains the code to replicate the the CLASPP the Data Curation.
 
 
 <p align="center">
-  <img width="32%" src= "https://github.com/user-attachments/assets/e2a5f335-3710-489b-800a-df5cab462488">
+  <img width="120%" src= "https://github.com/user-attachments/assets/e2a5f335-3710-489b-800a-df5cab462488">
 </p>
 
 </br> 
