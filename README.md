@@ -78,22 +78,22 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
 - `sample_spec_cluster_6.py`: sample from spectral clusters and strifies samples across all Spectral Clusters
 
 
-- `data/`: directory to hold the data/temp files   
-
-    - `csv_loc/`: where all csv and tsv files are located 
-
-      - `uni2acc.tsv`: hand currated exeptions to data found in dbPTM that where difficult to automate (only a handfull)
-    
-    - `text_loc/`: where all txt files are located
- 
-      - `infosforaffinitymat/` : where the order of the indexes for the affinity matrix npz files are held.
-
-        - `ST-Phosphorylation.txt` : info for the  .mat file that is already populated
-     
-      - `ussc_output` : where the [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) clustering file goes (example format should replace on your own)
-     
-        - `testdataNC-5.txt` : ouput of the  [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) (example of what the format should be plead replace)
-  
+|- `data/`: directory to hold the data/temp files   
+|
+|    - `csv_loc/`: where all csv and tsv files are located 
+|
+|      - `uni2acc.tsv`: hand currated exeptions to data found in dbPTM that where difficult to automate (only a handfull)
+|    
+|    - `text_loc/`: where all txt files are located
+| 
+|      - `infosforaffinitymat/` : where the order of the indexes for the affinity matrix npz files are held.
+|
+|        - `ST-Phosphorylation.txt` : info for the  .mat file that is already populated
+|     
+|      - `ussc_output` : where the [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) clustering file goes (example format should replace on your own)
+|     
+|        - `testdataNC-5.txt` : ouput of the  [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) (example of what the format should be plead replace)
+|  
       
     
       
