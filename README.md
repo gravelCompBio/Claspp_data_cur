@@ -222,7 +222,7 @@ pip3 install unipressed==1.4.0
 pip3 install pandas==2.3.1
 ``` 
 
-### **For torch you will have to download to the torch's specification if you want gpu acceleration from this website** https://pytorch.org/get-started/locally/ 
+### **For torch you will have to download to the torch's specification if you want gpu acceleration from this website ** [pytroch](https://pytorch.org/get-started/locally/) ** 
 
   
 
