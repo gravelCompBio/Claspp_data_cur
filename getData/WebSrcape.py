@@ -1,25 +1,14 @@
 import os
 import sys
-import subprocess
-import tarfile 
 import requests
 import threading
 import queue
 import time
-import json
-import gzip
 import wget
 
-from selenium import webdriver
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.by import By
-
-from bs4 import BeautifulSoup
-from zipfile import ZipFile 
 
 from unipressed import UniprotkbClient
 from unipressed import IdMappingClient
-
 
 
 pwd = os.getcwd()
