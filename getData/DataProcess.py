@@ -116,9 +116,11 @@ def getinfo(info):
         spe=h[1]
         return spe,lab,pep
 
+
 def getrand(ilist):
     output=random.choice(ilist)
     return output
+
 
 def getaff(pep1,pep2):
     score=0
@@ -133,7 +135,6 @@ def getaff(pep1,pep2):
 #  stage 1 
 #----------------------------------------------------------------------------------------
 #########################################################################################
-
 
 
 def unzip_and_read_files_from_dbPTM( db_loc : str ="data/dbPTMloc/"  ):
@@ -151,12 +152,9 @@ def unzip_and_read_files_from_dbPTM( db_loc : str ="data/dbPTMloc/"  ):
     uni2name={}
     masterlist=[]#   ---------------------  store raw info into masterlist (list)
     folder = os.listdir(f"{db_loc}")
-    #print(folder)
     for infolder in folder:
-        
         input_file = f"{db_loc}{infolder}"
         output_file = f"{db_loc}{infolder[:-3]}"
-
         if not os.path.isdir(input_file):
             with tarfile.open(input_file, 'r:gz') as tar:
                 tar.extractall(path=output_file)
@@ -165,15 +163,11 @@ def unzip_and_read_files_from_dbPTM( db_loc : str ="data/dbPTMloc/"  ):
     for infolder in folder:
         input_file = f"{db_loc}{infolder}"
         output_file = f"{db_loc}{infolder[:-3]}"
-        #print(infolder)
         if ".gz" in input_file:
             continue
-        #print(infolder)
         infolderI = os.listdir(f"{db_loc}"+infolder)
-        #print(infolderI)
         for file in infolderI:
             fullpath=f"{db_loc}"+infolder+'/'+file
-            #print(fullpath)
             lab=file.replace(' ','-')
             time.sleep(1)
             hf=open(fullpath,'r')
@@ -190,16 +184,6 @@ def unzip_and_read_files_from_dbPTM( db_loc : str ="data/dbPTMloc/"  ):
                 if '_' in ung:
                     wack.append(info)
     return uni2name, masterlist
-
-
-
-
-
-
-
-
-
-
 
 
 def intial_hand_curation_update( masterlist : list[str] , csv_loc : str ="data/csv_loc/"):
@@ -220,7 +204,6 @@ def intial_hand_curation_update( masterlist : list[str] , csv_loc : str ="data/c
             unisetForF.add(l[0])
         else:
             newmasterlist.append(info)
-
     uni2acc={}
     hf=open(f"{csv_loc}uni2acc.tsv",'r')
     lines=hf.readlines()
@@ -229,7 +212,6 @@ def intial_hand_curation_update( masterlist : list[str] , csv_loc : str ="data/c
         uni=l[0]
         acc=l[2]
         uni2acc[uni]=acc
-
     for info in masterlist:
         l=list(info.split('_'))
         if l[2]=='':
@@ -241,7 +223,6 @@ def intial_hand_curation_update( masterlist : list[str] , csv_loc : str ="data/c
     masterlist=newmasterlist
     #   --------------------  get a set of all unique uniprots
     uniset=set()#  ---------  set that stores uniprots 
-
     for info in masterlist:
         l=list(info.split("_"))
         uniset.add(l[0])
@@ -292,10 +273,8 @@ def separate_old_and_new_data_v2(uni2seq: dict[str:str], olduni2seq: dict[str:st
     """
     for uni in olduni2seq.keys():
         uni2seq[uni]=olduni2seq[uni]
-    
     newunis=set()
     oldunis=set()
-
     for info in masterlist:
         l=list(info.split('_'))
         uni=l[0]
@@ -352,7 +331,6 @@ def remove_broken_peptides(masterlist : list[str]):
         else:
             newML.append(info)
     masterlist=newML
-
     k21=[]
     bad=[]
     for info in masterlist:
@@ -384,8 +362,6 @@ def fix_missmatched_uniprot_postions(uni2seq: dict[str:str], masterlist : list[s
     wrongpos=[]
     correpos=[]
     wrong=[]
-
-
     for i,info in enumerate(masterlist):
         l=list(info.split("_"))
         uni=l[0]
@@ -400,9 +376,6 @@ def fix_missmatched_uniprot_postions(uni2seq: dict[str:str], masterlist : list[s
             correpos.append(info)
         else:
             wrong.append(info)
-
-            
-        
     for i,info in enumerate(wrong):
         l=list(info.split("_"))
         uni=l[0]
@@ -511,7 +484,6 @@ def fix_missmatched_uniprot_postions_v2( uni2seq: dict[str:str], mmUni2ver2seq: 
                 fixed[info]=seq
             else:
                 notfixed.add(info)
-
     fixedpos=set()
     ks=list(fixed.keys())
     for i,info in enumerate(ks):
@@ -546,8 +518,6 @@ def fix_missmatched_uniprot_postions_v2( uni2seq: dict[str:str], mmUni2ver2seq: 
         if info in fixed.keys():
             seq=fixed[info]
         paddedseq="----------"+seq+"----------"
-        
-
         if pep == paddedseq[pos-1:pos+20]:
             correpos.append(info)
         else:
@@ -571,8 +541,6 @@ def filter_for_human_and_major_res_per_PTM_type( masterlist : list[str],text_loc
     Returns:
         writes the file that plugs into the greedy represetive based clustering 
     """
-
-
     labset=set()
     lab2count={}
     for info in masterlist:
@@ -601,19 +569,16 @@ def filter_for_human_and_major_res_per_PTM_type( masterlist : list[str],text_loc
             continue
         elif spe=="HUMAN" and res in lab2res[lab]:
             newML.append(info)
-
     n='\n'
     masterlist=newML
     hf=open(f"{text_loc}cleanedinfoTranserfer.txt",'w+')
     for info in masterlist:
         hf.write(f"{info}{n}")
     hf.close()
-
     peps=set()
     for info in masterlist:
         l=list(info.split("_"))
         peps.add(l[3])
-    
     hf=open(f"{text_loc}pep.txt",'w+')
     for pep in peps:
         hf.write(f"_{pep}_{n}")
@@ -625,6 +590,7 @@ def filter_for_human_and_major_res_per_PTM_type( masterlist : list[str],text_loc
 #----------------------------------------------------------------------------------------
 #########################################################################################
 
+
 def readin_files_v1(text_loc : str = "data/text_loc/"):
     """
     reads in files generated from prev code 
@@ -633,18 +599,14 @@ def readin_files_v1(text_loc : str = "data/text_loc/"):
     Returns:
         masterlist (list[str]) : reads in masterlist from prevouse code
         pep2clus (dict[str:str]) : reads in greedy rep based clustering 
-
     """
-
     masterlist=[]
     pep2clus={}
     newML=[]
-
     hf=open(f"{text_loc}cleanedinfoTranserfer.txt",'r')
     lines=hf.readlines()
     for line in lines:
         masterlist.append(line[:-1])
-    
     hf=open(f"{text_loc}clus3.txt",'r')
     lines=hf.readlines()
     for line in lines:
@@ -652,7 +614,6 @@ def readin_files_v1(text_loc : str = "data/text_loc/"):
         pep=l[1]
         clu=l[3]
         pep2clus[pep]=clu
-    
     for info in masterlist:
         l=list(info.split('_'))
         pep=l[3]
@@ -701,8 +662,6 @@ def track_all_human_multi_lable_peps(masterlist : list[str], text_loc : str = "d
                 humanpeps.add(pep)
             else:
                 nonhumanpeps.add(pep)
-    
-
     for pep in humanpeps:
         infos=pep2info[pep]
         for info in infos:
@@ -722,20 +681,15 @@ def track_all_human_multi_lable_peps(masterlist : list[str], text_loc : str = "d
     for pep in hpep2labs.keys():
         if 1 < len(hpep2labs[pep]):
             mlabpeps.add(pep)
-
-
     bs=set(brokeninfo)
-
     labs=set()
     for pep in hpep2labs.keys():
         for lab in hpep2labs[pep]:
             if lab not in sltu:
                 continue
             labs.add(lab)
-    
     mlabel2pep={}
     pep2mllabel={}
-
     mlabel2pep["Multi_P1_Acetylation_Ubiquitination"]=set()
     mlabel2pep["Multi_P2_O-linked-Glycosylation_Phosphorylation"]=set()
     mlabel2pep["Multi_P3_Acetylation_Malonylation_Ubiquitination"]=set()
@@ -744,7 +698,6 @@ def track_all_human_multi_lable_peps(masterlist : list[str], text_loc : str = "d
     mlabel2pep["Multi_P6_Acetylation"]=set()
     mlabel2pep["Multi_P7_other"]=set()
     #"Multi_P1_Acetylation_Ubiquitination"
-
     for pep in hpep2labs.keys():
         labs=hpep2labs[pep]
         if len(labs) > 1:
@@ -787,8 +740,6 @@ def track_all_human_multi_lable_peps(masterlist : list[str], text_loc : str = "d
     prank["Multi_P3_Acetylation_Malonylation_Ubiquitination"]=4
     prank["Multi_P6_Acetylation"]=5
     prank["Multi_P4_Methylation"]=6
-    
-
     hf=open(f"{text_loc}mulLab.txt",'w+')
     for pep in pep2mllabel.keys():
         labs=hpep2labs[pep]
@@ -815,7 +766,6 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
         rank (dir[str:int]) : ptm type ranked by abundance
 
     """
-
     nonHumanClus=[]
     humanClus=[]
     humanMLPepClus=[]
@@ -825,11 +775,6 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
     clus2info={}
     nonUsedPTMs=set()
     rank={}
-
-    
-    
-
-    
     for info in masterlist:
         l=list(info.split('_'))
         clus=l[5]
@@ -845,9 +790,7 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
             lab2count[lab]=0
         lab2count[lab]=lab2count[lab]+1
         labset.add(lab)
-
     slabs=sorted(lab2count.items(), key=lambda x: x[1], reverse=True)
-    
     for lab in slabs:
         if lab[0] not in ltu:
             nonUsedPTMs.add(lab[0])
@@ -861,7 +804,6 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
         acc=l[2]
         h=list(acc.split('-'))
         spe=h[1]
-        
         if lab not in ltu:
             continue
         elif spe=="HUMAN":
@@ -870,15 +812,12 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
             if res not in lab2res2count[lab].keys():
                 lab2res2count[lab][res]=0
             lab2res2count[lab][res]=lab2res2count[lab][res]+1
-    
     r=0
     slabs=sorted(lab2count.items(), key=lambda x: x[1], reverse=True)
     for lab in slabs:
         if lab[0] in ltu:
             r=r+1
             rank[lab[0]]=r
-
-    
     for info in masterlist:
         l=list(info.split('_'))
         clus=l[5]
@@ -895,7 +834,6 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
             spe, lab, pep=getinfo(info)
             if spe=="HUMAN":
                 humanl.append(info)
-        
         if len(humanl) > 0:
             mlset=[]
             humanClus.append(clus)
@@ -907,31 +845,19 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
                 humanMLPepClus.append(clus)
             else:
                 humanNonMLPepClus.append(clus)
-                
         else:
             nonHumanClus.append(clus)
-    
-    print(len(nonHumanClus), "number of cluster that do NOT contain a human ptm")
-    print(len(humanClus), " number of clusters that have human PTMs in them")
-    print("split these further into")
-    print()
-    print(len(humanMLPepClus), "number of clusters that contain a human multi-label peptide")
-    print(len(humanNonMLPepClus), "number of clusters that DO contain a human ptm but do NOT contain a human multi-label peptide")
-
     for clus in humanNonMLPepClus:
         infos=clus2info[clus]
         maxRankSubClus=[]
         currank=0
-        #print(infos)
         b=0
         for info in infos:
             if info in bs:
                 continue
             spe, lab, pep=getinfo(info)
             if spe=="HUMAN" and lab in sltu:
-
                 r=rank[lab]
-                #print(r)
                 if r >currank:
                     maxRankSubClus=[]
                     currank=r
@@ -945,16 +871,13 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
             sampledInfo.append(getrand(maxRankSubClus))
         else:
             nonIntrestClusters.append(clus)
-        
     mlPriority=set()
     addsample=[]
-
     for i,clus in enumerate(humanMLPepClus):
         infos=clus2info[clus]
         subML=[]
         b=0
         for info in infos:
-
             if info in bs:
                 continue
             #print(info)
@@ -963,24 +886,17 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
             spe=h[1]
             pep=l[3]
             lab=l[4]
-            
             if pep in pep2mllabel.keys() and spe=="HUMAN" and lab in sltu:
                 subML.append(info)
-            
-        # print()
-        # print()
         maxRankSubClus=[]
         currank=0
         for info in subML:
             l=list(info.split("_"))
-            #h=list(l[2].split("-"))
             pep=l[3]
             lab=pep2mllabel[pep]
             if lab=="Multi_P7_other":
                 continue
-            
             r=prank[lab]
-            #print(r)
             if r >currank:
                 maxRankSubClus=[]
                 currank=r
@@ -993,13 +909,10 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
         if b==1:
             fsamp=getrand(maxRankSubClus)
             addsample.append(fsamp)
-
     mlinfokey={}
     mlinfokesI={}
     for info in addsample:
         spe, lab, pep=getinfo(info)
-        
-        #print(pep)
         ins=pep2info[pep]
         labs=set()
         setofinfo=set()
@@ -1008,7 +921,6 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
             if ispe=="HUMAN" and ilab in sltu:
                 labs.add(ilab)
                 setofinfo.add(i)
-            
         mlinfokesI[info]=setofinfo
         mlinfokey[info]=labs
     masterlist=[]
@@ -1016,9 +928,7 @@ def set_sampeling_prority(masterlist : list[str], mlabpeps : set[str], pep2mllab
         masterlist.append(info)
     for info in sampledInfo:
         masterlist.append(info)
-
     return masterlist, nonIntrestClusters, clus2info, nonHumanClus, rank , mlinfokey ##########3
-
 
 
 def set_up_medium_negitive_data_set(nonIntrestClusters : list[str], clus2info : dict[str:list[str]], nonHumanClus : list[str], rank : dict[str:int], text_loc : str = "data/text_loc/" ):
@@ -1040,7 +950,6 @@ def set_up_medium_negitive_data_set(nonIntrestClusters : list[str], clus2info : 
     for clus in nonHumanClus:
         for info in clus2info[clus]:
             totalInfoInMNDS.append(info)
-
     mndsRes2count={}
     for info in totalInfoInMNDS:
         spe, lab, pep=getinfo(info)
@@ -1069,7 +978,6 @@ def set_up_medium_negitive_data_set(nonIntrestClusters : list[str], clus2info : 
             else:
                 continue
         sampledMNDS.append(getrand(maxRankSubClus))
-
     for clus in nonHumanClus:
         maxRankSubClus=[]
         currank=0
@@ -1102,6 +1010,7 @@ def set_up_medium_negitive_data_set(nonIntrestClusters : list[str], clus2info : 
         hf.write(info+'\n')
     hf.close()
 
+
 def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str], text_loc : str = "data/text_loc/"):
     """
     sets data for each PTM type to be clustered (SK-Learn's spectral clustering)
@@ -1111,15 +1020,12 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
         mlinfokey (dict[str:str]) : maps ptm data to label
         text_loc (str) : location of the text dir
     Returns:
-    
     """
-    
     lab2info={}
     lab2rescount={}
     lab2count={}
     newlab2info={}
     lab2error={}
-
     for info in masterlist:
         if info in mlinfokey.keys():
             for lab in mlinfokey[info]:
@@ -1135,9 +1041,7 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
     
     for lab in lab2info.keys():
         lab2count[lab]=len(lab2info[lab])
-    
     slabs=sorted(lab2count.items(), key=lambda x: x[1], reverse=True)
-    
     for lab in lab2info.keys():
         lab2rescount[lab]={}
         infos=lab2info[lab]
@@ -1148,7 +1052,6 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
             if res not in lab2rescount[lab].keys():
                 lab2rescount[lab][res]=0
             lab2rescount[lab][res]=lab2rescount[lab][res]+1
-    
     newlab2info["RK-Methylation"]=set()
     newlab2info["K-Ubiquitination"]=set()
     newlab2info["K-Acetylation"]=set()
@@ -1164,7 +1067,6 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
     newlab2info["C-Glutathionylation"]=set()
     newlab2info["N-N-linked-Glycosylation"]=set()
     newlab2info["PK-Hydroxylation"]=set()
-
     for lab in lab2info.keys():
         if "Methylation"==lab:
             for info in lab2info[lab]:
@@ -1217,13 +1119,10 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
         elif "Hydroxylation"==lab:
             for info in lab2info[lab]:
                 newlab2info["PK-Hydroxylation"].add(info)
-    
     lab2count={}
     for lab in newlab2info.keys():
         lab2count[lab]=len(newlab2info[lab])
-    
     slabs=sorted(lab2count.items(), key=lambda x: x[1], reverse=True)
-    
     lab2rescount={}
     for lab in newlab2info.keys():
         lab2rescount[lab]={}
@@ -1235,14 +1134,12 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
             if res not in lab2rescount[lab].keys():
                 lab2rescount[lab][res]=0
             lab2rescount[lab][res]=lab2rescount[lab][res]+1
-
     for slab in slabs:
         posclus=math.floor(slab[1]/2000)
         if posclus>20:
             posclus=20
         if posclus==0:
             posclus=1
-
     for lab in lab2count.keys():
         ar=set()
         lab2error[lab]={}
@@ -1269,7 +1166,6 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
                     lab2error[lab]["mlgood"].append(info)
                 else:
                     lab2error[lab]["bad"].append(info)
-
     cluster2infoC={}
     for lab in newlab2info.keys():
         for info in newlab2info[lab]:
@@ -1278,7 +1174,6 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
             if clus not in cluster2infoC.keys():
                 cluster2infoC[clus]=[]
             cluster2infoC[clus].append(info)
-    
     b=0
     for clus in cluster2infoC.keys():
         samp=cluster2infoC[clus]
@@ -1294,8 +1189,6 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
 
             if sos != len(mlinfokey[fsamp]):
                 print(samp)
-
-
     if not os.path.isdir(f"{text_loc}infosforaffinitymat"):
         os.makedirs(f"{text_loc}infosforaffinitymat")
     n='\n'
@@ -1304,9 +1197,6 @@ def set_up_for_spec_clustering( masterlist : list[str], mlinfokey : dict[str:str
         for info in newlab2info[lab]:
             hf.write(f"{info}{n}")    
         hf.close()
-
-
-
 
 
 def prep_matlab_dist_mat_for_USSC(text_loc : str = "data/text_loc/" ):
@@ -1360,11 +1250,6 @@ def prep_matlab_dist_mat_for_USSC(text_loc : str = "data/text_loc/" ):
 #########################################################################################
 
 
-
-
-
-
-
 def prep_data_for_spec_clus(text_loc : str = "data/text_loc/"):
     """
     sets up data for each PTM type to be clustered (SK-Learn's spectral clustering) 
@@ -1380,7 +1265,6 @@ def prep_data_for_spec_clus(text_loc : str = "data/text_loc/"):
     lab2peps={}
     lab2affm={}
     lab2maxnc={}
-    
     folder = os.listdir(f"{text_loc}infosforaffinitymat/")
     for file in folder:
         if ".mat" in file:
@@ -1389,23 +1273,13 @@ def prep_data_for_spec_clus(text_loc : str = "data/text_loc/"):
         lab2peps[lab]=[]
         if lab == "ST-Phosphorylation":
             continue
-
-
-
-
-
-
-
-
         hf=open(f"{text_loc}infosforaffinitymat/{file}",'r')
         lines=hf.readlines()
         for line in lines:
             l=list(line.split("_"))
             pep=l[3]
             lab2peps[lab].append(pep)
-    
     for lab in lab2peps.keys():
-        
         npeps=len(lab2peps[lab])
         nc=math.floor(npeps / 2000)
         if nc > 20:
@@ -1413,23 +1287,17 @@ def prep_data_for_spec_clus(text_loc : str = "data/text_loc/"):
         if nc <= 2:
             continue
         lab2maxnc[lab]=nc
-
     for lab in lab2maxnc.keys():
         npeps=len(lab2peps[lab])
         half_affm=np.zeros((npeps,npeps))
         peps=lab2peps[lab]
-        # print(peps[:10])
-        # print(lab)
         strings=peps
         npeps=len(strings)
         arr = np.array([list(s) for s in strings])
-        
         unique_chars, encoded = np.unique(arr, return_inverse=True)
         encoded = encoded.reshape(arr.shape)
-        
         n = len(encoded)
         distmat = np.zeros((n, n), dtype=np.int8)
-        
         for i in range(n):
             diffs = encoded != encoded[i]
             distmat[i] = np.sum(diffs, axis=1)
@@ -1437,9 +1305,7 @@ def prep_data_for_spec_clus(text_loc : str = "data/text_loc/"):
             del diffs
         max_len = arr.shape[1]
         lab2affm[lab]=max_len - distmat
-        #print(max_len - distmat)
     return lab2peps, lab2affm, lab2maxnc
-
 
 
 def spec_clus_sk_learn(lab2peps : dict[str:list[str]], lab2affm : dict[str:list[int]], lab2maxnc : dict[str:int], text_loc : str = "data/text_loc/"):
@@ -1454,12 +1320,9 @@ def spec_clus_sk_learn(lab2peps : dict[str:list[str]], lab2affm : dict[str:list[
     Returns:
         
     """
-    
     n="\n"
-    
     if not os.path.isdir(f"{text_loc}speccluslabs"):
         os.makedirs(f"{text_loc}speccluslabs")
-
     for lab in lab2maxnc.keys():
         print(f"{lab} sk-learn SpectralClustering running might take some time",end='\r')
         peps=lab2peps[lab]
@@ -1477,16 +1340,11 @@ def spec_clus_sk_learn(lab2peps : dict[str:list[str]], lab2affm : dict[str:list[
                 hf.close()
 
 
-
-
-
-
 #########################################################################################
 #----------------------------------------------------------------------------------------
 #  stage 5
 #----------------------------------------------------------------------------------------
 #########################################################################################
-
 
 
 def sample_possilbe_easy_neg_data(fasta_loc : str = "data/fasta_loc/", text_loc : str = "data/text_loc/"):
@@ -1554,17 +1412,14 @@ def sample_possilbe_easy_neg_data(fasta_loc : str = "data/fasta_loc/", text_loc 
         b=1
         for c in aa:
             if len(res2c[c])!=220000:
-                b=0
-            
+                b=0   
         if b==1:
             break
         rn = random.randint(0, (len(unilist)-1))
-        #print(rn)
         runi=unilist[rn]
         seq=uni2seq[runi]
         rn = random.randint(0, (len(seq)-1))
         info=runi+'_'+str(rn+1)
-        #pep=getpep(seq,rn)
         paddedseq='----------'+seq+'----------'
         pep=paddedseq[rn:rn+21]
         res=pep[10]
@@ -1597,6 +1452,7 @@ def sample_possilbe_easy_neg_data(fasta_loc : str = "data/fasta_loc/", text_loc 
 #----------------------------------------------------------------------------------------
 #########################################################################################
 
+
 def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "data/text_loc/"):
     """
     orginizes data coming form spectral clustering 
@@ -1614,8 +1470,6 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
         notclustered (list[str]) : all data not clustered
         
     """
-
-
     cluslabs=[]
     cluslab2pd={}
     cluslab2peps={}
@@ -1631,7 +1485,6 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
     NRcluslab2pdF={}
     posSet=set()
     res2count={}
-
     for lab in baselabs:
         nc=bl2nc[lab]
         for i in range(nc):
@@ -1640,8 +1493,6 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
     
     for cluslab in cluslabs:
         cluslab2pd[cluslab]=set()
-
-    #bl2c2pep=[]
     for bl in baselabs:
         nc=bl2nc[bl]
         if bl!='ST-Phosphorylation':
@@ -1712,7 +1563,6 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
             labC2c[labC]=labC2c[labC]+1
     for lab in labC2c.keys():
         print(lab,labC2c[lab])
-
     hf=open(f"{csv_loc}pep2clusname.csv",'w+')
     for lab in bl2pep2c.keys():
         for pep in bl2pep2c[lab].keys():
@@ -1723,8 +1573,6 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
             fl=f"{lab}_nc{c}_tot{nc}".replace(' ','')
             hf.write(f"{pep},{fl}"+'\n')
     hf.close()
-
-
     hf=open(f"{text_loc}mulLab.txt",'r')
     lines=hf.readlines()
     for line in lines:
@@ -1739,37 +1587,21 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
                     
             if lab =='M-Acetylation':
                 lab="AM-Acetylation"
-
             if lab =='S-Phosphorylation' or lab=="T-Phosphorylation":
                 lab="ST-Phosphorylation"
-                
-
             if lab =='K-Methylation':
                 lab="RK-Methylation"
-
             if lab =='K-Hydroxylation':
                 lab="PK-Hydroxylation"
             if pep not in pep2labs.keys():
                 pep2labs[pep]=set()
             pep2labs[pep].add(lab)
     print(labset)
-
-
-
-
-
-
-    
     for cluslab in cluslabs:
         mLcluslab2pd[cluslab]=set()
-    
-
     print(mLcluslab2pd)
-
-
     i=0
     for pep in pep2labs.keys():
-        #print(pep,pep2labs[pep])
         labs=pep2labs[pep]
         peppass=0
         fullLabs=[]
@@ -1793,12 +1625,10 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
         for lab in fullLabs:
             catlab=catlab+lab
             if 500 <= len(mLcluslab2pd[lab]):
-                
                 b=1
         if "Succinylation" in catlab or "Malonylation" in catlab or "Sumoylation" in catlab:
             b=0
             for lab in fullLabs:
-            
                 if 1500<= len(mLcluslab2pd[lab]):
                     b=1
         if b==1:
@@ -1809,11 +1639,9 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
 
             pepnotused.append(pep)
             continue
-        
         for lab in fullLabs:
             mLcluslab2pd[lab].add(pep)
             pepsused.add(pep)
-        
     print(len(notclustered),"notmapped")
     print(len(pepsused),"used",)
     print(len(pepnotused),"not used",)
@@ -1821,12 +1649,8 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
         print(lab,len(mLcluslab2pd[lab]))
     for lab in nuratio.keys():
         print(lab,len(nuratio[lab]))
-
     for cluslab in cluslabs:
         NRcluslab2pdF[cluslab]=[]
-
-
-
     for bl in bl2pep2c.keys():
         for pep in bl2pep2c[bl].keys():
             if pep in pep2labs.keys():
@@ -1837,14 +1661,9 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
             NRcluslab2pdF[fl].append(pep)
     for fl in NRcluslab2pdF.keys():
         print(fl,len(NRcluslab2pdF[fl]))
-    
     cluslab2pd={}
     for cluslab in cluslabs:
         cluslab2pd[cluslab]=set()
-
-
-
-    
     for fl in NRcluslab2pdF.keys():
         samp = NRcluslab2pdF[fl]
         random.shuffle(samp)
@@ -1852,12 +1671,8 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
             if 2000==len(mLcluslab2pd[fl])+len(cluslab2pd[fl]):
                 break
             cluslab2pd[fl].add(pep)
-
-
-
     for lab in mLcluslab2pd.keys():
         print(lab,len(mLcluslab2pd[lab])+len(cluslab2pd[lab]),len(cluslab2pd[lab]))
-
     for lab in mLcluslab2pd.keys():
         fullset=set()
         for pep in mLcluslab2pd[lab]:
@@ -1865,10 +1680,6 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
         for pep in cluslab2pd[lab]:
             fullset.add(pep)
         print(lab,len(mLcluslab2pd[lab])+len(cluslab2pd[lab]),len(cluslab2pd[lab]),len(fullset))
-
-
-    
-
     for lab in mLcluslab2pd.keys():
         fullset=set()
         for pep in mLcluslab2pd[lab]:
@@ -1878,9 +1689,7 @@ def sample_from_spec_clus(csv_loc : str = "data/csv_loc/", text_loc : str = "dat
             posSet.add(pep)
             fullset.add(pep)
         print(lab,len(fullset))
-
     print(len(posSet))
-
     for pep in posSet:
         res=pep[10]
         if res not in res2count.keys():
@@ -1903,10 +1712,7 @@ def sample_negtive_data(csv_loc : str = "data/csv_loc/", text_loc : str = "data/
     Returns:
         negres2peps (dict[char:set(str)]) : mapping modified residue to peptides
         negSet (set(str)) : set of all negtive data 
-        
-        
     """
-
     negSet=set()
     negres2peps={}
     MNdataset=set()
@@ -1924,8 +1730,6 @@ def sample_negtive_data(csv_loc : str = "data/csv_loc/", text_loc : str = "data/
     print(len(negSet))
     for res in negres2peps.keys():
         print(res,len(negres2peps[res]))
-    
-
     negSet=set() 
     usedSet=set()
     ENdataset=set()
@@ -1934,7 +1738,6 @@ def sample_negtive_data(csv_loc : str = "data/csv_loc/", text_loc : str = "data/
     lines=hf.readlines()
     for line in lines:
         l=list(line[:-1].split('_'))
-        # print(l)
         pep=l[1]
         clus=l[3]
         if clus not in usedSet:
@@ -1950,6 +1753,7 @@ def sample_negtive_data(csv_loc : str = "data/csv_loc/", text_loc : str = "data/
             ENdataset.add(pep)
             negSet.add(pep)
     return negres2peps, negSet
+    
 
 def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[str]], cluslab2pd : dict[str:set[str]],
                               negres2peps : dict[str:set[str]], negSet : set[str], cluslabs : list[str],
@@ -1972,19 +1776,10 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         notclustered (list[str]) : all data not clustered
         csv_loc (str) : location of the csv dir
     Returns:
-        
-        
     """
-
-
-
-
-
     train,pretest=train_test_split( list(pepsused) , random_state=42,test_size=0.3, shuffle=True)
     test,val=train_test_split( pretest , random_state=42,test_size=0.5, shuffle=True)
-    #cluslab2peps
     broken=set()
-
     telab2c={}
     tco=0
     for lab in mLcluslab2pd.keys():
@@ -1996,7 +1791,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         telab2c[lab]=co
     for lab in telab2c.keys():
         print(lab,telab2c[lab])
-    
     valab2c={}
     for lab in mLcluslab2pd.keys():
         co=0
@@ -2006,8 +1800,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         valab2c[lab]=co
     for lab in valab2c.keys():
         print(lab,valab2c[lab])
-    
-
     trlab2c={}
     for lab in mLcluslab2pd.keys():
         co=0
@@ -2017,8 +1809,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         trlab2c[lab]=co
     for lab in trlab2c.keys():
         print(lab,trlab2c[lab])
-    
-
     for lab in trlab2c.keys():
         trl=trlab2c[lab]
         tel=telab2c[lab]
@@ -2026,8 +1816,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         tot=trl+tel+vall
         if tot!=0:
             print(lab,"test ratio",tel/tot,"train ratio",trl/tot,"val ratio",vall/tot)
-        #print(lab,"test ratio",tel/tot,"train ratio",trl/tot)
-    
     r2c={}
     for pep in test:
         res=pep[10]
@@ -2052,9 +1840,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         r2c[res]=r2c[res]+1
     for res in r2c.keys():
         print("fval2",res,r2c[res])
-    
-
-
     ftrain=set(train)
     ftest=set(test)
     fval=set(val)
@@ -2078,14 +1863,10 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         for pep in aval:
             fval.add(pep)
         print(len(fval),len(fval),len(ftrain))
-    
     tot=len(ftrain)+len(ftest)+len(fval)
-
     print(len(ftrain)/tot)
     print(len(ftest)/tot)
     print(len(fval)/tot)
-
-
     r2c={}
     for pep in ftest:
         res=pep[10]
@@ -2110,8 +1891,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         r2c[res]=r2c[res]+1
     for res in r2c.keys():
         print("fval2",res,r2c[res])
-    
-
     ftrain2=ftrain
     ftest2=ftest
     fval2=fval
@@ -2129,16 +1908,10 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         for pep in rval:
             fval2.add(pep)
             negSet.add(pep)
-    
-
     tot=len(ftrain2)+len(ftest2)+len(fval2)
-
     print(len(ftrain2)/tot)
     print(len(ftest2)/tot)
     print(len(fval2)/tot)
-
-
-
     r2c={}
     newnegset=set()
     for pep in ftest2:
@@ -2146,7 +1919,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         if res not in r2c.keys():
             r2c[res]=0
         r2c[res]=r2c[res]+1
-        #newnegset.add(pep)
     for res in r2c.keys():
         print("ftest2",res,r2c[res])
     r2c={}
@@ -2155,7 +1927,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         if res not in r2c.keys():
             r2c[res]=0
         r2c[res]=r2c[res]+1
-        #newnegset.add(pep)
     for res in r2c.keys():
         print("ftrain2",res,r2c[res])
     r2c={}
@@ -2164,18 +1935,10 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         if res not in r2c.keys():
             r2c[res]=0
         r2c[res]=r2c[res]+1
-        #newnegset.add(pep)
     for res in r2c.keys():
         print("fval2",res,r2c[res])
-    
-
-
     Trainpeps=[]
     Trainlabs=[]
-    # cluslabs
-    # negSet
-    # cluslab2peps
-    #hf.write("train_hd3_CustBL62SeqDistSpecClus_uniResRatio_CustNegRaio-24_04_19.csv")
     pc=0
     for i,pep in enumerate(ftrain2):
         Trainpeps.append(pep)
@@ -2194,10 +1957,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         else:
             lab.append(0)
         Trainlabs.append(lab)
-        # print(pep,lab)
-        # if i==100:
-        #     break
-    
     nolabs=set()
     for labs,pep in zip(Trainlabs,Trainpeps):
         b=1
@@ -2208,21 +1967,13 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
                 b=0
         if b==1:
             nolabs.add(pep)
-        
     print(len(nolabs))
     posnolab=set()
     for pep in nolabs:
         b=0
         if pep in pep2labs.keys():
-            #print(pep2labs[pep])
             posnolab.add(pep)
-        # for clu in cluslab2peps.keys():
-        #     if pep in  cluslab2peps[clu]:
-        #         print(pep)
-        #         b=1
-        # if b==1:
     print(len(posnolab))
-
     cnc=0
     nc=set()
     for n in notclustered:
@@ -2231,7 +1982,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         if pep in nc:
             cnc+cnc
     print(cnc)
-
     hf=open(f"{csv_loc}train_hd3_CustBL62SeqDistSpecClus_uniResRatio_CustNegRaio.csv",'w+')
     line="pep"
     for cl in cluslabs:
@@ -2244,14 +1994,8 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
             line=line+','+str(l)
         hf.write(line+'\n')
     hf.close()
-
-
     Trainpeps=[]
     Trainlabs=[]
-    # cluslabs
-    # negSet
-    # cluslab2peps
-    #hf.write("train_hd3_CustBL62SeqDistSpecClus_uniResRatio_CustNegRaio-24_04_19.csv")
     pc=0
     for i,pep in enumerate(ftest2):
         Trainpeps.append(pep)
@@ -2269,11 +2013,7 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
             lab.append(1)
         else:
             lab.append(0)
-        Trainlabs.append(lab)
-        # print(pep,lab)
-        # if i==100:
-        #     break
-        
+        Trainlabs.append(lab)        
     nolabs=set()
     for labs,pep in zip(Trainlabs,Trainpeps):
         b=1
@@ -2284,7 +2024,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
                 b=0
         if b==1:
             nolabs.add(pep)
-        
     print(len(nolabs))
     hf=open(f"{csv_loc}test_hd3_CustBL62SeqDistSpecClus_uniResRatio_CustNegRaio.csv",'w+')
     line="pep"
@@ -2298,14 +2037,8 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
             line=line+','+str(l)
         hf.write(line+'\n')
     hf.close()
-
-
     Trainpeps=[]
     Trainlabs=[]
-    # cluslabs
-    # negSet
-    # cluslab2peps
-    #hf.write("train_hd3_CustBL62SeqDistSpecClus_uniResRatio_CustNegRaio-24_04_19.csv")
     for i,pep in enumerate(fval2):
         Trainpeps.append(pep)
         lab=[]
@@ -2319,10 +2052,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
         else:
             lab.append(0)
         Trainlabs.append(lab)
-        # print(pep,lab)
-        # if i==100:
-        #     break
-    
     nolabs=set()
     for labs,pep in zip(Trainlabs,Trainpeps):
         b=1
@@ -2333,7 +2062,6 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
                 b=0
         if b==1:
             nolabs.add(pep)
-        
     print(len(nolabs))
     hf=open(f"{csv_loc}val_hd3_CustBL62SeqDistSpecClus_uniResRatio_CustNegRaio.csv",'w+')
     line="pep"
@@ -2347,6 +2075,7 @@ def data_split_train_test_val(pepsused : set[str], mLcluslab2pd : dict[str:set[s
             line=line+','+str(l)
         hf.write(line+'\n')
     hf.close()
+
 
 def reduce_neg_ratio(csv_loc : str = "data/csv_loc/"):
     """
@@ -2365,7 +2094,6 @@ def reduce_neg_ratio(csv_loc : str = "data/csv_loc/"):
     neg=[]
     posc=[0]*54
     for line in lines[1:]:
-        #print(line)
         l=list(line[:-1].split(','))
         for i,lab in enumerate(l[1:]):
             if lab=='1':
@@ -2395,11 +2123,7 @@ def reduce_neg_ratio(csv_loc : str = "data/csv_loc/"):
         if a2c[res]!=numPerRes:
             keeplines.append(line)
             a2c[res]=a2c[res]+1
-        
-
-
         x=x+1
-
         for a in aa:
             if a2c[a]==numPerRes:
                 b=1
@@ -2415,10 +2139,6 @@ def reduce_neg_ratio(csv_loc : str = "data/csv_loc/"):
     for line in keeplines:
         hf.write(line)
     hf.close()
-
-
-
-
     hf=open(f"{csv_loc}val_hd3_CustBL62SeqDistSpecClus_uniResRatio_CustNegRaio.csv",'r')
     lines=hf.readlines()
     sline=lines[0]
@@ -2452,11 +2172,7 @@ def reduce_neg_ratio(csv_loc : str = "data/csv_loc/"):
         if a2c[res]!=100:
             keeplines.append(line)
             a2c[res]=a2c[res]+1
-        
-
-
         x=x+1
-
         for a in aa:
             if a2c[a]==100:
                 b=1
@@ -2467,43 +2183,25 @@ def reduce_neg_ratio(csv_loc : str = "data/csv_loc/"):
     for line in pos:
         keeplines.append(line)        
     print(len(keeplines))
-
-
     hf=open(f"{csv_loc}val_hd3_CustBL62SeqDistSpecClus_uniResRatio_1to1NegRaio.csv",'w+')
     hf.write(sline)
     for line in keeplines:
         hf.write(line)
     hf.close()
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     hf=open(f"{csv_loc}test_hd3_CustBL62SeqDistSpecClus_uniResRatio_CustNegRaio.csv",'r')
-    #PTMDB-data-cur-08-16-23/dataCur_24_02_29/newdata/test_hd3_CustBL62SeqDistSpecClus_uniResRatio_CustNegRaio-24_05_07.csv
     lines=hf.readlines()
     sline=lines[0]
     keeplines=[]
     pos=[]
     neg=[]
     for line in lines[1:]:
-        #print(line)
         l=list(line[:-1].split(','))
-        
         neglab=int(l[-1])
         if neglab==1:
             neg.append(line)
         else:
             pos.append(line)
     print(len(pos),len(neg))
-
     aa="ACDEFGHIKLMNPQRSTVWY"
     random.seed(42)
     random.shuffle(neg)
@@ -2520,11 +2218,7 @@ def reduce_neg_ratio(csv_loc : str = "data/csv_loc/"):
         if a2c[res]!=100:
             keeplines.append(line)
             a2c[res]=a2c[res]+1
-        
-
-
         x=x+1
-
         for a in aa:
             if a2c[a]==100:
                 b=1
