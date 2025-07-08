@@ -1,11 +1,6 @@
 import os
 import sys
-import subprocess
 import tarfile 
-import time
-import json
-import gzip
-import shutil
 import math
 import random
 
@@ -13,7 +8,7 @@ import numpy as np
 from scipy.io import savemat
 from unipressed import UniprotkbClient
 from sklearn.cluster import SpectralClustering
-from sklearn.model_selection import train_test_split
+
 
 
 random.seed(42)
