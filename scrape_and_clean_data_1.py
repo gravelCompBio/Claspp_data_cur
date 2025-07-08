@@ -24,7 +24,10 @@ def main():
     print("step 1) downloading the following PTM types")
     ws.download_db_PTM()
     
-    time.sleep(15)
+    while (not os.path.exists(f"{dbdir}Phosphorylation.gz")) and (not os.path.exists(f"{dbdir}Ubiquitination.gz")):
+        print("waiting on downloading" , end='\r')
+    	time.sleep("1")
+    
     
 
     print("step 2) reading and intial cleaning")
