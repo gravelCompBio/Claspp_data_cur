@@ -170,91 +170,6 @@ cd Claspp_data_cur
 | Zenodo  | [zenodo version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main) | This version contains code and helper files already genrated. mostly for proof of concept and seeing the all the data intermeidate states |
 
   
-Github (base code without helperfiles that are generated when you run the code)
-
-  
-
-### Alternative option) Zenodo  
-
-  
-
-  
-
-Then download the link found in `multitask_MHA_esm2_t30_150M_UR50D_neg_ratio_8+8_shift_30_mask_0.2_2023-03-25_90.txt` or can be found at this link https://zenodo.org/record/8170005 
-
-  
-
-The download link should take to a page that should look like this 
-
-  
-
-  
-
-![Screenshot from 2023-07-20 18-14-19](https://github.com/gravelCompBio/Phos-ST-temp/assets/75225868/109c898e-49cc-4849-abb6-1dcb1f3aa5c1) 
-
-  
-
-Click the download box highlighted in picture above 
-
-  
-
-</br> 
-
-  
-
-### After picking one of the options above to download the training weights see below 
-
-  
-
-  
-
-Once downloaded, **unizip** the folder and place in the `Phosformer-ST` along with all the other files in this github repository 
-
-  
-
-The final `Phosformer-ST` directory orinization should have the following files/folder  
-
-  
-
-- file 1 `phos-ST_Example_Code.ipynb` 
-
-  
-
-- file 2 `modeling_esm.py` 
-
-   
-
-- file 3 `configuration_esm.py` 
-
-  
-
-- file 4 `tokenization_esm.py` 
-
-  
-
-- file 5 `multitask_MHA_esm2_t30_150M_UR50D_neg_ratio_8+8_shift_30_mask_0.2_2023-03-25_90.txt` 
-
-  
-
-- file 6 `phosST.yml` 
-
-   
-
-- file 7 `Readme.md`
-
-
-
-- file 8 `LICENSE`
-
-  
-
-- folder 1 `multitask_MHA_esm2_t30_150M_UR50D_neg_ratio_8+8_shift_30_mask_0.2_2023-03-25_90` (make sure it is unzipped) 
-
-  
-
-:tada: Once you have a folder with the files/folder above you have all the required files to run the model :tada: 
-
-  
 
   
 
@@ -345,42 +260,15 @@ The final `Phosformer-ST` directory orinization should have the following files/
 
 ## ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white) Installing dependencies with conda  
 
-  
+    
 
-### PICK ONE of the options below  
-
-### Main Option) Utilizing the PhosformerST.yml file 
-
-here is a step-by-step guide to set up the environment with the yml file  
-
-  
-
-Just type these lines of code into the terminal after you download this repository (this assumes you have anaconda already installed) 
-
-  
-
-```   
-conda env create -f phosST.yml -n PhosST  
-```   
-
-```   
-conda deactivate 
-```   
-
-```   
-conda activate phosST  
-```   
-
-  
-
-### Alternative option) Creating this environment without yml file 
-
-(This is if torch is not working with your version of cuda or any other problem) 
+### Creating this conda environment 
+(yml file is include but torch times makes it not useable depending on your nvidia driver)
 
 Just type these lines of code into the terminal after you download this repository (this assumes you have anaconda already installed) 
 
 ```   
-conda create -n phosST python=3.9  
+conda create -n claspp_cur python=3.9.23 
 ``` 
 
 ```   
@@ -388,39 +276,31 @@ conda deactivate
 ``` 
 
 ```   
-conda activate phosST  
+conda activate claspp_cur  
 ``` 
 
 ```   
-conda install -c conda-forge jupyterlab 
+pip3 install numpy==2.0.2
+```
+
+```   
+pip3 install scikit-learn==1.6.1
+```
+
+```   
+pip3 install requests==2.32.4
+```
+
+```   
+pip3 install wget==3.2
 ``` 
 
 ```   
-pip3 install numpy==1.24.3 
+pip3 install unipressed==1.4.0
 ``` 
 
 ```   
-pip3 install pandas==2.0.2 
-``` 
-
-```   
-pip3 install matplotlib==3.7.1 
-``` 
-
-```   
-pip3 install scikit-learn==1.2.2 
-``` 
-
-```   
-pip3 install tqdm==4.65.0 
-``` 
-
-```   
-pip3 install fair-esm==2.0.0 
-``` 
-
-```   
-pip3 install transformers==4.31.0 
+pip3 install pandas==2.3.1
 ``` 
 
 ### **For torch you will have to download to the torch's specification if you want gpu acceleration from this website** https://pytorch.org/get-started/locally/ 
