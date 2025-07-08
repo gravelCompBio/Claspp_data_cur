@@ -151,6 +151,7 @@ def unzip_and_read_files_from_dbPTM( db_loc : str ="data/dbPTMloc/"  ):
     uni2name={}
     masterlist=[]#   ---------------------  store raw info into masterlist (list)
     folder = os.listdir(f"{db_loc}")
+    #print(folder)
     for infolder in folder:
         
         input_file = f"{db_loc}{infolder}"
@@ -159,13 +160,22 @@ def unzip_and_read_files_from_dbPTM( db_loc : str ="data/dbPTMloc/"  ):
         if not os.path.isdir(input_file):
             with tarfile.open(input_file, 'r:gz') as tar:
                 tar.extractall(path=output_file)
+    time.sleep(5)
+    folder = os.listdir(f"{db_loc}")
+    for infolder in folder:
+        input_file = f"{db_loc}{infolder}"
+        output_file = f"{db_loc}{infolder[:-3]}"
+        #print(infolder)
         if ".gz" in input_file:
             continue
+        #print(infolder)
         infolderI = os.listdir(f"{db_loc}"+infolder)
+        #print(infolderI)
         for file in infolderI:
             fullpath=f"{db_loc}"+infolder+'/'+file
             #print(fullpath)
             lab=file.replace(' ','-')
+            time.sleep(1)
             hf=open(fullpath,'r')
             lines=hf.readlines()
             for line in lines:
@@ -180,6 +190,7 @@ def unzip_and_read_files_from_dbPTM( db_loc : str ="data/dbPTMloc/"  ):
                 if '_' in ung:
                     wack.append(info)
     return uni2name, masterlist
+
 
 
 
