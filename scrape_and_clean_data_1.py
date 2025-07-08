@@ -26,7 +26,7 @@ def main():
     
     while (not os.path.exists(f"{dbdir}Phosphorylation.gz")) and (not os.path.exists(f"{dbdir}Ubiquitination.gz")):
         print("waiting on downloading" , end='\r')
-    	time.sleep("1")
+        time.sleep("1")
     
     
 
