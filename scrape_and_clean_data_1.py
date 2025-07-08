@@ -23,10 +23,18 @@ def main():
     
     print("step 1) downloading the following PTM types")
     ws.download_db_PTM()
-    
-    while (not os.path.exists(f"{dbdir}Phosphorylation.gz")) and (not os.path.exists(f"{dbdir}Ubiquitination.gz")):
-        print("waiting on downloading" , end='\r')
-        time.sleep("1")
+    #f"{dbdir}Ubiquitination.gz")
+    #f"{dbdir}Phosphorylation.gz")
+def monitor_download_progress(file_path):
+    last_size = -1
+    while True:
+        current_size = os.path.getsize(file_path)
+        if current_size == last_size:
+            print("Download seems to be complete or stalled.")
+            break
+        print(current_size)
+        last_size = current_size
+        time.sleep(1) # Check file size every second
     
     
 
