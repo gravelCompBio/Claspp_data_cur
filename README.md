@@ -172,12 +172,83 @@ cd Claspp_data_cur
   
 
   
+<\br>
+ 
+
+  
+
+## ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white) Installing dependencies with conda  
+
+    
+
+### Creating this conda environment 
+(yml file is include but torch times makes it not useable depending on your nvidia driver)
+
+Just type these lines of code into the terminal after you download this repository (this assumes you have anaconda already installed) 
+
+```   
+conda create -n claspp_cur python=3.9.23 
+``` 
+
+```   
+conda deactivate 
+``` 
+
+```   
+conda activate claspp_cur  
+``` 
+
+```   
+pip3 install numpy==2.0.2
+```
+
+```   
+pip3 install scikit-learn==1.6.1
+```
+
+```   
+pip3 install requests==2.32.4
+```
+
+```   
+pip3 install wget==3.2
+``` 
+
+```   
+pip3 install unipressed==1.4.0
+``` 
+
+```   
+pip3 install pandas==2.3.1
+``` 
+
+### **For torch you will have to download to the torch's specification if you want gpu acceleration from this website** https://pytorch.org/get-started/locally/ 
+
+  
+
+```   
+pip3 install torch torchvision torchaudio 
+``` 
+
+  
+
+### the terminal line above might look different for you  
+
+  
+
+We provided code to test Phosformer-ST (see section below) 
+
+  
+:tada: you are know ready to run the code :tada: 
+  
 
 </br> 
 
   
 
 </br> 
+
+  
 
   
 
@@ -254,84 +325,6 @@ cd Claspp_data_cur
   
 
 </br> 
- 
-
-  
-
-## ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white) Installing dependencies with conda  
-
-    
-
-### Creating this conda environment 
-(yml file is include but torch times makes it not useable depending on your nvidia driver)
-
-Just type these lines of code into the terminal after you download this repository (this assumes you have anaconda already installed) 
-
-```   
-conda create -n claspp_cur python=3.9.23 
-``` 
-
-```   
-conda deactivate 
-``` 
-
-```   
-conda activate claspp_cur  
-``` 
-
-```   
-pip3 install numpy==2.0.2
-```
-
-```   
-pip3 install scikit-learn==1.6.1
-```
-
-```   
-pip3 install requests==2.32.4
-```
-
-```   
-pip3 install wget==3.2
-``` 
-
-```   
-pip3 install unipressed==1.4.0
-``` 
-
-```   
-pip3 install pandas==2.3.1
-``` 
-
-### **For torch you will have to download to the torch's specification if you want gpu acceleration from this website** https://pytorch.org/get-started/locally/ 
-
-  
-
-```   
-pip3 install torch torchvision torchaudio 
-``` 
-
-  
-
-### the terminal line above might look different for you  
-
-  
-
-We provided code to test Phosformer-ST (see section below) 
-
-  
-
-  
-
-</br> 
-
-  
-
-</br> 
-
-  
-
-  
 
   
 
