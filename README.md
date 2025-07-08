@@ -138,16 +138,16 @@ Installing torch can be the most complex part
   
 
 ```   
-gh repo clone gravelCompBio/Phosformer-ST 
+gh repo clone gravelCompBio/Claspp_data_cur
 ```   
 
   
 
 ```   
-cd Phosformer-ST 
+cd Claspp_data_cur
 ``` 
 
-### The following step demonstrates users how to download the training weights 
+### The following step demonstrates users how to find the differnt versions of the data curation 
 
 
   -other repositories were used because the folder's memory size is larger than the allowed space on github 
@@ -160,37 +160,17 @@ cd Phosformer-ST
 
   
 
-### Main option) Hugging Face  
+### Main option) 
+
+
+
+| Repo  | Link | Discription|
+| ------------- | ------------- |------------------------------------------|
+| GitHub  | [github version](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This verstion contains code but needs the to run the code to generate all the helper-files (will take some time run this code)|
+| Zenodo  | (zenodo version)(https://github.com/gravelCompBio/Claspp_data_cur/tree/main) | This version contains code and helper files already genrated. mostly for proof of concept and seeing the all the data intermeidate states |
 
   
-
-Then download the link found in `multitask_MHA_esm2_t30_150M_UR50D_neg_ratio_8+8_shift_30_mask_0.2_2023-03-25_90.txt` or can be found at this link https://huggingface.co/gravelcompbio/Phosformer-ST_trainging_weights/tree/main 
-
-  
-
-The download link should take to a page that should look like this 
-
-  
-
-  
-
-![Screenshot from 2023-07-24 13-49-54](https://github.com/gravelCompBio/Phosformer-ST/assets/75225868/bd2ebb5e-6174-4695-9cd3-730b835a8664) 
-
-  
-
-  
-
-  
-
-Click the download box highlighted in picture above 
-
-  
-
-  
-
-  
-
-</br> 
+Github (base code without helperfiles that are generated when you run the code)
 
   
 
