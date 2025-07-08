@@ -15,16 +15,6 @@ text_loc = "data/text_loc/"
 
 
 
-def main():
-    if not os.path.isdir(f"{dbdir}"):
-        os.makedirs(f"{dbdir}")
-    if not os.path.isdir(f"{fasta_loc}"):
-        os.makedirs(f"{fasta_loc}")
-    
-    print("step 1) downloading the following PTM types")
-    ws.download_db_PTM()
-    #f"{dbdir}Ubiquitination.gz")
-    #f"{dbdir}Phosphorylation.gz")
 def monitor_download_progress(file_path):
     last_size = -1
     while True:
@@ -35,6 +25,20 @@ def monitor_download_progress(file_path):
         print(current_size)
         last_size = current_size
         time.sleep(1) # Check file size every second
+
+
+
+def main():
+    if not os.path.isdir(f"{dbdir}"):
+        os.makedirs(f"{dbdir}")
+    if not os.path.isdir(f"{fasta_loc}"):
+        os.makedirs(f"{fasta_loc}")
+    
+    print("step 1) downloading the following PTM types")
+    ws.download_db_PTM()
+    #f"{dbdir}Ubiquitination.gz"
+    #f"{dbdir}Phosphorylation.gz")
+    monitor_download_progress(f"{dbdir}Ubiquitination.gz")
     
     
 
