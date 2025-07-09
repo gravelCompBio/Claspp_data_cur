@@ -8,6 +8,7 @@ import numpy as np
 from scipy.io import savemat
 from unipressed import UniprotkbClient
 from sklearn.cluster import SpectralClustering
+from sklearn.model_selection import train_test_split
 
 
 
