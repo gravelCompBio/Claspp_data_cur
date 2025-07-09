@@ -168,10 +168,10 @@ cd Claspp_data_cur
 | Zenodo  | [zenodo version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main) | This version contains code and helper files already genrated. mostly for proof of concept and seeing the all the data intermeidate states |
 
   
-
+ 
   
 
- 
+</br> 
 
   
 
