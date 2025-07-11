@@ -166,7 +166,7 @@ cd Claspp_data_cur
 | ------------- | ------------- |------------------------------------------|
 | GitHub  | [github version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This verstion contains code but needs the to run the code to generate all the helper-files (will take some time run this code)|
 | Zenodo  | [zenodo version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main) | This version contains code and helper files already genrated. mostly for proof of concept and seeing the all the data intermeidate states |
-| GitHub  | [github version Forward](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This verstion contains code but now weights (file to big)|
+| GitHub  | [github version Forward](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This verstion contains code but NOT any weights (file to big)|
 | Huggingface | [huggingface version Forward](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This verstion contains code and training weights |
 | Zenodo | [zenodo version training_data](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | zenodo version of training/testing/validation data|
 | Hugingface | [huggingface version training_data](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | huggingface version of training/testing/validation data|
