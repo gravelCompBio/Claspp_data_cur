@@ -313,7 +313,7 @@ We provided code to test Phosformer-ST (see section below)
 
   
 
-- `LICENSE`: MIT licence (open source but don't try to make money off of it)
+- `LICENSE`: MIT licence (open source)
   
 
   
