@@ -50,7 +50,7 @@ def main():
     missingpeps, missingunis, uni2seq, masterlist = ws.find_missing_data(masterlist=masterlist)
     masterlist, uniset = dp.intial_hand_curation_update(masterlist=masterlist, csv_loc=csv_loc)
 
-    print("step 3) fining missing data points in dbPTM according to uniprot database standards")
+    print("step 3) finding missing data points in dbPTM according to uniprot database standards")
     if not os.path.exists(f"{fasta_loc}uniprotPostMissingPepPreConRes.fasta"):
         uni2seq = ws.download_fasta_from_unis_v1( uniset=uniset, fasta_loc=fasta_loc)
     else:
