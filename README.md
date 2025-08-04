@@ -238,7 +238,6 @@ pip3 install torch torchvision torchaudio
 
   
 
-We provided code to test Phosformer-ST (see section below) 
 
   
 :tada: you are now ready to run the code :tada: 
