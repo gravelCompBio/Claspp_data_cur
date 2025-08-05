@@ -146,37 +146,7 @@ gh repo clone gravelCompBio/Claspp_data_cur
 cd Claspp_data_cur
 ``` 
 
-### The following step demonstrates users how to find the different versions of the data curation 
 
-
-  -other repositories were used because the folder's memory size is larger than the allowed space on github 
-
-  
-
-  
-
-</br> 
-
-  
-
-### Other related repos
-
-
-
-| Repo  | Link | Description|
-| ------------- | ------------- |------------------------------------------|
-| GitHub  | [github version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This version contains code but needs the to run the code to generate all the helper-files (will take some time run this code)|
-| Zenodo  | [zenodo version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main) | This version contains code and helper files already generated. mostly for proof of concept and seeing the all the data intermediate states |
-| GitHub  | [github version Forward](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This version contains code but NOT any weights (file to big)|
-| Huggingface | [huggingface version Forward](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This version contains code and training weights |
-| Zenodo | [zenodo version training_data](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | zenodo version of training/testing/validation data|
-| Huggingface | [huggingface version training_data](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | hugingface version of training/testing/validation data|
-| Huggingface  | [gradio lab webtool](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | webtool hosted on gradio lab (huggingface)|
-| webtool | [website version of webtool](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | webtool hosted on a server|
- 
-  
-
-</br> 
 
   
 
@@ -252,7 +222,37 @@ pip3 install torch torchvision torchaudio
 
   
 
+### The following step demonstrates users how to find the different versions of the data curation 
+
+
+  -other repositories were used because the folder's memory size is larger than the allowed space on github 
+
   
+
+  
+
+</br> 
+
+  
+
+### Other related repos
+
+
+
+| Repo  | Link | Description|
+| ------------- | ------------- |------------------------------------------|
+| GitHub  | [github version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This version contains code but needs the to run the code to generate all the helper-files (will take some time run this code)|
+| Zenodo  | [zenodo version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main) | This version contains code and helper files already generated. mostly for proof of concept and seeing the all the data intermediate states |
+| GitHub  | [github version Forward](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This version contains code but NOT any weights (file to big)|
+| Huggingface | [huggingface version Forward](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This version contains code and training weights |
+| Zenodo | [zenodo version training_data](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | zenodo version of training/testing/validation data|
+| Huggingface | [huggingface version training_data](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | hugingface version of training/testing/validation data|
+| Huggingface  | [gradio lab webtool](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | webtool hosted on gradio lab (huggingface)|
+| webtool | [website version of webtool](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | webtool hosted on a server|
+ 
+  
+
+</br> 
 
 
   
