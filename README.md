@@ -261,14 +261,14 @@ pip3 install torch torchvision torchaudio
 ### Final data organization
 
 <p align="center">
-  <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/githubfig_3-21.png">
+  <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/Screenshot%20from%202025-08-05%2011-48-48.png">
 </p>
 
 </br> 
 
 ### Workflow
 <p align="center">
-  <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/githubfig_2-20.png">
+  <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/Screenshot%20from%202025-08-05%2011-48-06.png">
 </p>
 
 </br>
