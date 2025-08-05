@@ -62,10 +62,23 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
 
 </br> 
 
+# Downloading this repository   
 
   
 
-## Installing dependencies with version info    
+```   
+gh repo clone gravelCompBio/Claspp_data_cur
+```   
+
+  
+
+```   
+cd Claspp_data_cur
+``` 
+
+  
+
+# Installing dependencies with version info    
 
   
 
@@ -132,19 +145,6 @@ Installing torch can be the most complex part
 
   
 
-## Downloading this repository   
-
-  
-
-```   
-gh repo clone gravelCompBio/Claspp_data_cur
-```   
-
-  
-
-```   
-cd Claspp_data_cur
-``` 
 
 
 
