@@ -25,7 +25,7 @@ Data curation for the Claspp Model
 
 
 <p align="center">
-  <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/githubfig_4-22.png">
+  <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/Screenshot%20from%202025-08-05%2011-50-53.png">
 </p>
 
 
