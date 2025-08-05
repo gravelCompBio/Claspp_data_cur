@@ -239,17 +239,13 @@ pip3 install torch torchvision torchaudio
 
 
 
-| Repo  | Link | Description|
+| Repo  | Link | Discription|
 | ------------- | ------------- |------------------------------------------|
-| GitHub  | [github version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This version contains code but needs the to run the code to generate all the helper-files (will take some time run this code)|
-| Zenodo  | [zenodo version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur/tree/main) | This version contains code and helper files already generated. mostly for proof of concept and seeing the all the data intermediate states |
-| GitHub  | [github version Forward](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This version contains code but NOT any weights (file to big)|
-| Huggingface | [huggingface version Forward](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | This version contains code and training weights |
-| Zenodo | [zenodo version training_data](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | zenodo version of training/testing/validation data|
-| Huggingface | [huggingface version training_data](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | hugingface version of training/testing/validation data|
-| Huggingface  | [gradio lab webtool](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | webtool hosted on gradio lab (huggingface)|
+| GitHub  | [github version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur)  | This verstion contains code but but no data. It needs you to run the code to generate all the helper-files (will take some time run this code)|
+| GitHub  | [github version Forward](https://github.com/gravelCompBio/Claspp_forward)  | This verstion contains code but NOT any weights (file too big for github)|
+| Huggingface | [huggingface version Forward](https://huggingface.co/esbglab/Claspp_forward)  | This verstion contains code and training weights |
+| Zenodo | [zenodo version training_data](https://zenodo.org/records/16739128?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjY4MDBkYjUwLTVlZjktNDZlNy04MjZjLTgzZjA0NjZiYmZlYyIsImRhdGEiOnt9LCJyYW5kb20iOiJlMThhZGNlMWUxN2EzNjYxNzllYjg5MWRiZjhiMWYxNSJ9.7Os5ZzQLT3TJu3Clv1Sxvh8oVtFTxxoeYLACFgKwZRjCApQdfQO2-AvctQ-eIIEojKTBGHLCcHlMTDG38AKn8A)  | zenodo version of training/testing/validation data|
 | webtool | [website version of webtool](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)  | webtool hosted on a server|
- 
   
 
 </br> 
