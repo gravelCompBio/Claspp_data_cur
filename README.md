@@ -259,14 +259,20 @@ pip3 install torch torchvision torchaudio
 
 
 ### Final data organization
+
 <p align="center">
   <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/githubfig_3-21.png">
 </p>
+
 </br> 
+
 ### Workflow
 <p align="center">
   <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/githubfig_2-20.png">
 </p>
+
+</br>
+
 ## Included in this repository are the following:   
    
 - `scrape_and_clean_data_1.py`: initial python file that downloads the PTM data from [dbPTM](https://biomics.lab.nycu.edu.tw/dbPTM/) and [uniprot](https://www.uniprot.org/). Then cleans the data 
