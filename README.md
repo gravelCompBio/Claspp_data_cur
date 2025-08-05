@@ -1,3 +1,6 @@
+
+
+<!-- This github was Made by Nathan Gravel --> 
 # Claspp_data_cur
 Data curation for the Claspp Model 
 
@@ -5,7 +8,6 @@ Data curation for the Claspp Model
 ## Introduction   
 
 
-<!-- This github was Made by Nathan Gravel --> 
 
 
   
@@ -20,11 +22,10 @@ Data curation for the Claspp Model
 
    
 
-For this repo we are generating a data set in the hopes to plug in for both Contrastive learning and fine tuning.  
 
 
 <p align="center">
-  <img width="120%" src= "https://github.com/user-attachments/assets/e2a5f335-3710-489b-800a-df5cab462488">
+  <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/githubfig_4-22.png">
 </p>
 
 
@@ -259,6 +260,9 @@ pip3 install torch torchvision torchaudio
 ## Included in this repository are the following:   
 
   
+<p align="center">
+  <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/githubfig_2-20.png">
+</p>
 
    
 - `scrape_and_clean_data_1.py`: initial python file that downloads the PTM data from [dbPTM](https://biomics.lab.nycu.edu.tw/dbPTM/) and [uniprot](https://www.uniprot.org/). Then cleans the data 
