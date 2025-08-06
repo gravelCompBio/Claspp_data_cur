@@ -87,7 +87,7 @@ cd Claspp_data_cur
 
   
 
-![python=3.9.23](https://img.shields.io/badge/Python-3.9.23-green)  ![jupyterlab=4.0.0](https://img.shields.io/badge/jupyterlab-4.0.0-blue)  
+![python=3.9.23](https://img.shields.io/badge/Python-3.9.23-green) 
 
 
 
