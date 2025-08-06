@@ -67,7 +67,7 @@ For the Claspp model go to this Github. For the webtool for the CLASPP can be ac
   
 
 ```   
-gh repo clone gravelCompBio/Claspp_data_cur
+git clone https://github.com/gravelCompBio/Claspp_data_cur.git
 ```   
 
   
