@@ -331,6 +331,61 @@ pip3 install torch torchvision torchaudio
 
   
 
+
+
+
+
+## Uses
+
+
+
+### Direct Use
+
+
+```
+python scrape_and_clean_data_1.py
+```
+
+
+```
+python rep_base_gready_cluster_2.py
+```
+
+
+```
+python post_rbgc_prep_for_spec_clustering_3.py
+```
+
+
+```
+python spec_clus_sklearn_4.py
+```
+
+
+```
+python get_easy_neg_data_5.py
+```
+
+
+```
+python sample_spec_cluster_6.py
+```
+
+
+
+
+- **Developed by:** Curation was created by Nathan Gravel.
+- Codebase testing and verstion controle by Austin Downes,
+- **Model type:** [Text classication]
+- **Language(s) (NLP):** [Protein Sequence]
+- **License:** [MIT]
+- **Finetuned from model:** [ESM-2 150M]
+
+[More Information Needed]
+
+
+
+
  
 
  
