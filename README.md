@@ -37,7 +37,7 @@ This repository contains the code to replicate the CLASPP model's Data Curation.
 
 
 
-For the Claspp model go to this Github. For the webtool for the CLASPP can be accessed from: 
+For the Claspp model go to this Github. For the webtool for the CLASPP can be accessed from: [github version of model(local)](https://github.com/gravelCompBio/Claspp_forward)  or [webtool version](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)
 
 </br> 
    
