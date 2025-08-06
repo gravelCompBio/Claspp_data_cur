@@ -375,10 +375,7 @@ python sample_spec_cluster_6.py
 
 - **Developed by:** Curation was created by Nathan Gravel.
 - Codebase testing and verstion controle by Austin Downes,
-- **Model type:** [Text classication]
-- **Language(s) (NLP):** [Protein Sequence]
 - **License:** [MIT]
-- **Finetuned from model:** [ESM-2 150M]
 
 
 
