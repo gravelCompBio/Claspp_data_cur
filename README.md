@@ -381,8 +381,6 @@ python sample_spec_cluster_6.py
 - **License:** [MIT]
 - **Finetuned from model:** [ESM-2 150M]
 
-[More Information Needed]
-
 
 
 
