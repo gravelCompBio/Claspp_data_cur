@@ -266,6 +266,8 @@ pip3 install torch torchvision torchaudio
   <img width="120%" src= "https://github.com/gravelCompBio/Claspp_data_cur/blob/main/github_fig/Screenshot%20from%202025-08-05%2011-48-06.png">
 </p>
 
+Johnson, J. L., Yaron, T. M., Huntsman, E. M., Kerelsky, A., Song, J., Regev, A., ... & Cantley, L. C. (2023). An atlas of substrate specificities for the human serine/threonine kinome. Nature, 613(7945), 759-766.
+UniProt Consortium. (2019). UniProt: a worldwide hub of protein knowledge. Nucleic acids research, 47(D1), D506-D515.
 </br>
 
 ## Included in this repository are the following:   
