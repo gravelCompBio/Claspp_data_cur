@@ -164,7 +164,7 @@ def find_missing_data( masterlist : list[str], csv_loc : str ="data/csv_loc/" ):
         temp.append(uni)
     temps.append(temp)
     #print(len(missingunis))
-
+    
     for temp in temps:
         #print(len(temp))
         reqs=UniprotkbClient.fetch_many(temp)
@@ -290,7 +290,7 @@ def map_out_uniprotIDs_to_uniParc_v1( oldunis: list[str] , csv_loc : str ="data/
             temps.append(temp)
             temp=set()
         temp.add(uni)
-
+    temps.append(temp)
     uni2uniparc={}
     c=0
 
@@ -351,6 +351,7 @@ def download_fasta_from_parc_v1( uni2uniparc : dict[str:str] , fasta_loc : str =
             temp=[]
         temp.append(uni2uniparc[uni])
         uniparc2uni[uni2uniparc[uni]]=uni
+    temps.append(temp)
     #print(len(temps))
     r='\r'
     olduni2seq={}
@@ -400,6 +401,7 @@ def map_out_uniprotIDs_to_uniParc_v2( oldunis: list[str] , csv_loc : str ="data/
             temps.append(temp)
             temp=set()
         temp.add(uni)
+    temps.append(temp)
 
     uni2uniparc={}
     c=0
@@ -465,6 +467,7 @@ def download_fasta_from_parc_v2( uni2uniparc : dict[str:str] , fasta_loc : str =
         temp.append(uni2uniparc[uni])
         uniparc2uni[uni2uniparc[uni]]=uni
     #print(len(temps))
+    temps.append(temp)
     r='\r'
     olduni2seq={}
     from unipressed import UniparcClient
