@@ -303,7 +303,7 @@ UniProt Consortium. (2019). UniProt: a worldwide hub of protein knowledge. Nucle
      
       - `ussc_output` : where the [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) clustering file goes (example format should replace on your own)
      
-        - `testdataNC-5.txt` : ouput of the  [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) (example of what the format should be plead replace)
+        - `testdataNC-5.txt` : ouput of the  [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) (example of what the format look like)
 
 - `getData/`: Where all functions exist
   
