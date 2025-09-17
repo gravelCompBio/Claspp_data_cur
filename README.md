@@ -366,6 +366,7 @@ python post_rbgc_prep_for_spec_clustering_3.py
 python spec_clus_sklearn_4.py
 ```
 
+Run [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) for any ptm type you can not fit into RAM space while doing sk-learn's Spectral Clustering
 
 ```
 python get_easy_neg_data_5.py
