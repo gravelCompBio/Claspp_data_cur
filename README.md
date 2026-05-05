@@ -243,9 +243,9 @@ pip3 install torch torchvision torchaudio
 
 | Repo  | Link | Discription|
 | ------------- | ------------- |------------------------------------------|
-| GitHub  | [github version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur)  | This verstion contains code but but no data. It needs you to run the code to generate all the helper-files (will take some time run this code)|
-| GitHub  | [github version Forward](https://github.com/gravelCompBio/Claspp_forward)  | This verstion contains code but NOT any weights (file too big for github)|
-| Huggingface | [huggingface version Forward](https://huggingface.co/esbglab/Claspp_forward)  | This verstion contains code and training weights |
+| GitHub  | [github version Data_cur](https://github.com/gravelCompBio/Claspp_data_cur)  | This version contains code but but no data. It needs you to run the code to generate all the helper-files (will take some time run this code)|
+| GitHub  | [github version Forward](https://github.com/gravelCompBio/Claspp_forward)  | This version contains code but NOT any weights (file too big for github)|
+| Huggingface | [huggingface version Forward](https://huggingface.co/esbglab/Claspp_forward)  | This version contains code and training weights |
 | Zenodo | [zenodo version training_data](https://zenodo.org/records/17674057)  | zenodo version of training/testing/validation data|
 
   
@@ -381,7 +381,7 @@ python sample_spec_cluster_6.py
 
 
 - **Developed by:** Curation was created by Nathan Gravel.
-- Codebase testing and verstion controle by Austin Downes,
+- Codebase testing and version controle by Austin Downes,
 - **License:** [MIT]
 
 
