@@ -31,7 +31,7 @@
 This repository contains the code to replicate the CLASPP model's Data Curation. With the original code I did NOT maintain/recover any random seeds so the data will be different from what I used but the process should be the same. The Sequence identity clustering is GPU accelerated (using [torch](https://pytorch.org/)) so a minimum of 8 GB of vRAM is needed. For the sk-learn version of Spectral Clustering you need a minimum of 250 GB of ram to run the K-Ubiq data set (n of 80,000). I also rely on [Ultra-Scalable Spectral Clustering](https://github.com/huangdonghere/USPEC_USENC) and it was written in matlab for larger PTM datasets specifically ST-Phosphorylation. This data curation should take 12 hours to run in total. 
 
 
-the manuscript can be found here (TBA)
+the manuscript can be found here (https://www.biorxiv.org/content/10.64898/2026.06.04.729962v1)
 
 </br> 
 
@@ -40,8 +40,7 @@ the manuscript can be found here (TBA)
 
 
 
-For the Claspp model go to this Github. For the webtool for the CLASPP can be accessed from: [github version of model(local)](https://github.com/gravelCompBio/Claspp_forward)  or [webtool version](https://github.com/gravelCompBio/Claspp_data_cur/tree/main)
-
+For the Claspp model go to this Github. For the webtool for the CLASPP can be accessed from: [github version of model(local)](https://github.com/gravelCompBio/Claspp_forward)
 </br> 
    
 
