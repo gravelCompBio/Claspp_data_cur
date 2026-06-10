@@ -40,7 +40,7 @@ the manuscript can be found here (https://www.biorxiv.org/content/10.64898/2026.
 
 
 
-For the Claspp model go to this Github. For the webtool for the CLASPP can be accessed from: [github version of model(local)](https://github.com/gravelCompBio/Claspp_forward)
+For the Claspp model go to this Github: [github version of model(local)](https://github.com/gravelCompBio/Claspp_forward)
 </br> 
    
 
